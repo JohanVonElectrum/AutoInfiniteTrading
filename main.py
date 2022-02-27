@@ -15,8 +15,10 @@ if __name__ == "__main__":
                 text = stdout_line.decode("utf-8").replace("\n", "")
                 print(text)
                 if "[MCC] Server was successfully joined." == text:
+                    print("Logged In!")
                     joined = True
-                elif "!quartz":
+                elif "!quartz" == text:
+                    print(f"We have {quartz} quartz blocks.")
                     client.communicate(input=f"We have {quartz} quartz blocks.".encode("utf-8"))
 
         if not joined:
@@ -28,6 +30,7 @@ if __name__ == "__main__":
         rgb = img[880, 400]
         if rgb == (198, 198, 198):
             client.communicate(input="/reco".encode("utf-8"))[0].decode("utf-8")
+            print("Logged Out!")
             joined = False
             pyautogui.rightClick(x=600, y=790)
             pyautogui.press("esc")

@@ -32,3 +32,4 @@ if __name__ == "__main__":
             pyautogui.rightClick(x=600, y=790)
             pyautogui.press("esc")
             quartz += 12
+            print(f"We have {quartz} quartz blocks.")
